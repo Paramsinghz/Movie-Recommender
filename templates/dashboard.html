@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		a{
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    opacity: 0.7;
+    border: none;
+    padding: 4px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.8s;
+    }
+	</style>
+</head>
+<body style="text-align: center;">
+<div style="
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;">
+
+	<h1>Welcome {{ user.username }}</h1>
+	<p><a style="margin-left: 900px; text-decoration:none" href="{{ url_for('logout') }}">Logout</a></p>
+</div>
+
+	<h2 style="padding: 24px 50px">Your Movies</h2>
+	{% if user.movies %}
+		<ul style="list-style-type: none; padding: inherit;">
+			{% for movie in user.movies %}
+				<li>{{ movie.title }} - {{ movie.rating }}</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>You have not rated any movies yet.</p>
+	{% endif %}
+	<h2 style="padding: 24px">Rate a Movie</h2>
+	<form method="POST" action="{{ url_for('rate') }}">
+		<label>Title:</label>
+		<input type="text" name="title" required><br><br>
+		<label>Rating:</label>
+		<input type="number" name="rating" min="1" max="10" required><br><br>
+		<input style="border-radius: 10px" type="submit" value="Rate">
+	</form>
+</body>
+</html>

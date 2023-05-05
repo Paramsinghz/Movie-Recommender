@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		body{
+		text-align: center; padding-top:50px; font-family: 'Ubuntu', sans-serif;
+		background-image: url('D:/Movie Recommendator/bg1.jpg');
+		background-repeat: no-repeat;
+		background-attachment:scroll;
+		background-size: 100% 1000px;
+    }
+	</style>
+</head>
+<body>
+<section >
+	<h2>LOGIN</h2>
+	{% if error %}
+		<p style="color: red;">{{ error }}</p>
+	{% endif %}
+	<form style="
+	font-family: 'Ubuntu', sans-serif;
+    font-weight: bolder;
+    border-radius: 20px;" method="POST" action="{{ url_for('login') }}">
+
+		<label>Username:</label>
+		<input type="text" name="username" required><br><br>
+		<label>Password:</label>
+		<input type="password" name="password" required><br><br>
+		<input style="
+    border-radius: 10px;
+    padding: 4px 12px;
+" type="submit" value="Login">
+	</form>
+
+</section>
+</body>
+</html>

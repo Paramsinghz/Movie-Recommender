@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400&family=Poppins&family=Ubuntu&display=swap');
+html, body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.flexbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+
+font-family: 'Ubuntu', sans-serif;
+    font-weight: bolder;
+    border-radius: 20px;
+
+}
+.rightbox{
+    padding-left: 600px;
+}
